@@ -31,7 +31,7 @@ pipeline {
               steps {
                script {
                  withDockerRegistry(credentialsId: 'dockerpass', toolName: 'docker') {
-                    dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/") {
+                    dir("/var/lib/jenkins/workspace/Microservice_Deployment/src/cartservice/src/") {
                         sh "docker build -t salhanovic/cartservice:latest ."
                         sh "docker push salhanovic/cartservice:latest"
                         sh "docker rmi salhanovic/cartservice:latest"
